@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SUMAR_TECH Games</title>
+<meta name="description" content="Bright, simple games for phone, tablet, PC and TV by SUMAR_TECH: Stack Drop, Rope Swing, Dribble Home and Tick Town.">
+<link rel="icon" href="img/rope-swing.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #2a1840; --ink-2: #6f5c80; --paper: #fffaf4; --card: #ffffff; --line: #f0e3d8; --coral: #ff6b5a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.55 "Baloo 2", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); }
+  header { padding: 64px 20px 72px; text-align: center; color: #fff; background: linear-gradient(160deg, #6f7df0 0%, #f39ac0 58%, #ffc98a 100%); }
+  header h1 { margin: 0; font-size: clamp(40px, 9vw, 72px); font-weight: 800; line-height: 1; letter-spacing: .02em; text-shadow: 0 4px 0 rgba(80, 30, 90, .25); }
+  header p { margin: 14px auto 0; max-width: 34ch; font-size: 19px; font-weight: 600; opacity: .95; }
+  main { max-width: 880px; margin: -40px auto 0; padding: 0 16px 40px; }
+  .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 16px; }
+  .game { display: flex; gap: 16px; padding: 18px; border-radius: 24px; background: var(--card); box-shadow: 0 1px 0 var(--line), 0 12px 30px rgba(60, 20, 80, .08); }
+  .game img { flex: none; width: 88px; height: 88px; border-radius: 22px; box-shadow: 0 4px 12px rgba(40, 10, 60, .18); }
+  .game h2 { margin: 0; font-size: 22px; font-weight: 800; line-height: 1.2; }
+  .game p { margin: 4px 0 10px; color: var(--ink-2); font-size: 15px; font-weight: 600; line-height: 1.4; }
+  .links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 15px; font-weight: 600; }
+  .play { display: inline-block; padding: 5px 14px; border-radius: 99px; background: var(--ink); color: #fff; text-decoration: none; }
+  .soon { padding: 5px 12px; border-radius: 99px; background: #f4ece4; color: var(--ink-2); }
+  .links a:not(.play) { color: var(--coral); }
+  footer { max-width: 880px; margin: 0 auto; padding: 8px 20px 48px; text-align: center; color: var(--ink-2); font-weight: 600; }
+  footer a { color: var(--coral); }
+</style>
+</head>
+<body>
+<header>
+  <h1>SUMAR_TECH</h1>
+  <p>Bright, simple games for your phone, tablet, PC and TV.</p>
+</header>
+<main>
+  <section class="games">
+    <article class="game">
+      <img src="img/stack-drop.png" alt="Stack Drop icon" width="88" height="88">
+      <div>
+        <h2>Stack Drop</h2>
+        <p>Tap to drop. Stack perfectly. How high can your tower go?</p>
+        <div class="links">
+          <a class="play" href="https://play.google.com/store/apps/details?id=com.sumartech.stackdrop">Get it on Google Play</a>
+          <a href="sumartech-legal/stack-drop/privacy.html">Privacy policy</a>
+          <a href="sumartech-legal/stack-drop/rules.html">Challenge rules</a>
+        </div>
+      </div>
+    </article>
+    <article class="game">
+      <img src="img/rope-swing.png" alt="Rope Swing icon" width="88" height="88">
+      <div>
+        <h2>Rope Swing</h2>
+        <p>Hold to swing, let go to fly. Grab the golden ring and hop across the sky!</p>
+        <div class="links">
+          <a class="play" href="https://play.google.com/store/apps/details?id=com.sumartech.ropeswing">Get it on Google Play</a>
+          <a href="sumartech-legal/rope-swing/privacy.html">Privacy policy</a>
+        </div>
+      </div>
+    </article>
+    <article class="game">
+      <img src="img/dribble-home.png" alt="Dribble Home icon" width="88" height="88">
+      <div>
+        <h2>Dribble Home</h2>
+        <p>Two thumbs, one ball: chip, lob and juggle it all the way to the big final!</p>
+        <div class="links">
+          <span class="soon">Coming soon</span>
+          <a href="sumartech-legal/dribble-home/privacy.html">Privacy policy</a>
+        </div>
+      </div>
+    </article>
+    <article class="game">
+      <img src="img/tick-town.png" alt="Tick Town icon" width="88" height="88">
+      <div>
+        <h2>Tick Town</h2>
+        <p>Turn the clock and a whole little town plays through its day. For ages 3 to 9.</p>
+        <div class="links">
+          <span class="soon">Coming soon</span>
+          <a href="sumartech-legal/tick-town/privacy.html">Privacy policy</a>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+<footer>
+  Contact: <a href="mailto:sumartechcorp@gmail.com">sumartechcorp@gmail.com</a>
+</footer>
+</body>
+</html>
