@@ -4,88 +4,401 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SUMAR_TECH Games</title>
-<meta name="description" content="Bright, simple games for phone, tablet, PC and TV by SUMAR_TECH: Stack Drop, Rope Swing, Dribble Home and Tick Town.">
-<link rel="icon" href="img/rope-swing.png">
+<meta name="description" content="Bright, simple games for phone, tablet, PC and TV by SUMAR_TECH: Stack Drop, Rope Swing, Dribble Home and Tick Town. Play Stack Drop free in your browser.">
+<meta name="theme-color" content="#16122b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SUMAR_TECH Games">
+<meta property="og:description" content="Bright, simple games for your phone, tablet, PC and TV. Play Stack Drop free in your browser.">
+<meta property="og:url" content="https://sumar7.github.io/">
+<meta property="og:image" content="https://sumar7.github.io/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/stack-drop-icon.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --ink: #2a1840; --ink-2: #6f5c80; --paper: #fffaf4; --card: #ffffff; --line: #f0e3d8; --coral: #ff6b5a; }
+  :root {
+    --bg: #fbf8f3;
+    --bg-2: #f3ede4;
+    --surface: #ffffff;
+    --line: #ebe2d6;
+    --ink: #1c1633;
+    --ink-2: #5d5474;
+    --accent: #ff6b4a;
+    --accent-ink: #ffffff;
+    --gold: #c98a00;
+    --btn: #1c1633;
+    --btn-ink: #ffffff;
+    --chip: #f1eaf9;
+    --chip-ink: #4c3d73;
+    --shadow: 0 1px 0 rgba(28, 22, 51, .04), 0 18px 40px -18px rgba(28, 22, 51, .28);
+    --hero-a: #2a1f5c;
+    --hero-b: #16122b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #110e22;
+      --bg-2: #17132e;
+      --surface: #1c1838;
+      --line: #2c2650;
+      --ink: #f4f0ff;
+      --ink-2: #b1a8cf;
+      --accent: #ff7a5c;
+      --gold: #ffc54d;
+      --btn: #f4f0ff;
+      --btn-ink: #16122b;
+      --chip: #2a2450;
+      --chip-ink: #d6ccff;
+      --shadow: 0 1px 0 rgba(255, 255, 255, .03), 0 20px 44px -20px rgba(0, 0, 0, .7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #110e22;
+    --bg-2: #17132e;
+    --surface: #1c1838;
+    --line: #2c2650;
+    --ink: #f4f0ff;
+    --ink-2: #b1a8cf;
+    --accent: #ff7a5c;
+    --gold: #ffc54d;
+    --btn: #f4f0ff;
+    --btn-ink: #16122b;
+    --chip: #2a2450;
+    --chip-ink: #d6ccff;
+    --shadow: 0 1px 0 rgba(255, 255, 255, .03), 0 20px 44px -20px rgba(0, 0, 0, .7);
+  }
+
   * { box-sizing: border-box; }
-  body { margin: 0; font: 16px/1.55 "Baloo 2", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); }
-  header { padding: 64px 20px 72px; text-align: center; color: #fff; background: linear-gradient(160deg, #6f7df0 0%, #f39ac0 58%, #ffc98a 100%); }
-  header h1 { margin: 0; font-size: clamp(40px, 9vw, 72px); font-weight: 800; line-height: 1; letter-spacing: .02em; text-shadow: 0 4px 0 rgba(80, 30, 90, .25); }
-  header p { margin: 14px auto 0; max-width: 34ch; font-size: 19px; font-weight: 600; opacity: .95; }
-  main { max-width: 880px; margin: -40px auto 0; padding: 0 16px 40px; }
-  .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 16px; }
-  .game { display: flex; gap: 16px; padding: 18px; border-radius: 24px; background: var(--card); box-shadow: 0 1px 0 var(--line), 0 12px 30px rgba(60, 20, 80, .08); }
-  .game img { flex: none; width: 88px; height: 88px; border-radius: 22px; box-shadow: 0 4px 12px rgba(40, 10, 60, .18); }
-  .game h2 { margin: 0; font-size: 22px; font-weight: 800; line-height: 1.2; }
-  .game p { margin: 4px 0 10px; color: var(--ink-2); font-size: 15px; font-weight: 600; line-height: 1.4; }
-  .links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 15px; font-weight: 600; }
-  .play { display: inline-block; padding: 5px 14px; border-radius: 99px; background: var(--ink); color: #fff; text-decoration: none; }
-  .soon { padding: 5px 12px; border-radius: 99px; background: #f4ece4; color: var(--ink-2); }
-  .links a:not(.play) { color: var(--coral); }
-  footer { max-width: 880px; margin: 0 auto; padding: 8px 20px 48px; text-align: center; color: var(--ink-2); font-weight: 600; }
-  footer a { color: var(--coral); }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font: 500 16px/1.6 "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: "Bricolage Grotesque", "Figtree", system-ui, sans-serif; text-wrap: balance; margin: 0; }
+
+  /* Hero: always the night sky Stack Drop climbs into */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    color: #f4f0ff;
+    background: radial-gradient(120% 90% at 85% 10%, #5b3fb0 0%, transparent 55%),
+                radial-gradient(90% 80% at 0% 100%, #ff6b4a33 0%, transparent 60%),
+                linear-gradient(180deg, var(--hero-a), var(--hero-b));
+  }
+  .stars { position: absolute; inset: 0; pointer-events: none; opacity: .7;
+    background-image:
+      radial-gradient(1.5px 1.5px at 12% 22%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 28% 68%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 46% 14%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 63% 42%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 78% 76%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 91% 30%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 6% 84%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 55% 88%, #fff 50%, transparent 51%);
+  }
+  nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; font: 800 20px/1 "Bricolage Grotesque", system-ui, sans-serif; letter-spacing: .01em; text-decoration: none; }
+  .brand-mark { display: grid; gap: 3px; }
+  .brand-mark i { display: block; height: 6px; border-radius: 2px; background: #6f7df0; }
+  .brand-mark i:nth-child(1) { width: 16px; margin-left: 5px; background: #9aa6ff; }
+  .brand-mark i:nth-child(2) { width: 20px; margin-left: 2px; background: #7a86f5; }
+  .brand-mark i:nth-child(3) { width: 24px; background: #ff6b4a; }
+  nav .navlinks { display: flex; gap: 20px; font-weight: 600; font-size: 15px; }
+  nav .navlinks a { text-decoration: none; opacity: .85; }
+  nav .navlinks a:hover { opacity: 1; }
+
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 48px; padding: 40px 0 88px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 99px; background: rgba(255, 255, 255, .1); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .eyebrow b { width: 8px; height: 8px; border-radius: 50%; background: #5ee39a; box-shadow: 0 0 0 4px rgba(94, 227, 154, .2); }
+  .hero h1 { margin-top: 18px; font-size: clamp(42px, 6.4vw, 76px); font-weight: 800; line-height: .98; letter-spacing: -.02em; }
+  .hero h1 em { font-style: normal; color: #ffb199; }
+  .hero p.lede { margin: 20px 0 0; max-width: 46ch; font-size: 19px; line-height: 1.55; color: #d9d2f5; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 14px; font-weight: 700; font-size: 16px; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn-primary { background: #ff6b4a; color: #fff; box-shadow: 0 10px 24px -10px rgba(255, 107, 74, .8); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(255, 107, 74, .9); }
+  .btn-ghost { background: rgba(255, 255, 255, .1); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .18); }
+  .btn-ghost:hover { background: rgba(255, 255, 255, .16); }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 30px 0 0; padding: 0; list-style: none; font-size: 14px; font-weight: 600; color: #c2b8e8; }
+  .facts li::before { content: "✓"; margin-right: 7px; color: #5ee39a; }
+
+  .showcase { position: relative; }
+  .showcase img { display: block; width: 100%; height: auto; border-radius: 22px; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .6), 0 0 0 1px rgba(255, 255, 255, .08); }
+  .showcase .tile { position: absolute; width: 46%; }
+  .showcase .t1 { position: relative; width: 88%; margin-left: 12%; transform: rotate(2deg); }
+  .showcase .t2 { left: 0; bottom: -34px; transform: rotate(-4deg); }
+  .showcase .t3 { right: -8px; bottom: -58px; width: 40%; transform: rotate(5deg); }
+  @media (prefers-reduced-motion: no-preference) {
+    .showcase .t1 { animation: bob 6s ease-in-out infinite; }
+    .showcase .t2 { animation: bob2 7s ease-in-out infinite; }
+    .showcase .t3 { animation: bob3 8s ease-in-out infinite; }
+    @keyframes bob { 50% { transform: rotate(2deg) translateY(-8px); } }
+    @keyframes bob2 { 50% { transform: rotate(-4deg) translateY(6px); } }
+    @keyframes bob3 { 50% { transform: rotate(5deg) translateY(-6px); } }
+  }
+
+  /* Games */
+  section.games { padding-top: 84px; padding-bottom: 40px; }
+  .section-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+  .section-head h2 { font-size: clamp(30px, 4vw, 42px); font-weight: 800; letter-spacing: -.015em; }
+  .section-head p { margin: 6px 0 0; color: var(--ink-2); font-size: 17px; }
+
+  .card { display: flex; flex-direction: column; border-radius: 26px; background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
+  .card .banner { position: relative; display: block; aspect-ratio: 1024 / 500; background: var(--bg-2); }
+  .card .banner img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .status { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; align-self: flex-start; padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; background: var(--bg-2); color: var(--ink-2); }
+  .status.live { background: #22b56622; color: #178a4c; }
+  .status.live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #22b566; }
+  .card .body { display: flex; flex: 1; flex-direction: column; gap: 14px; padding: 22px 24px 24px; }
+  .title { display: flex; align-items: center; gap: 14px; }
+  .title img { flex: none; width: 56px; height: 56px; border-radius: 15px; box-shadow: 0 4px 12px rgba(28, 22, 51, .2); }
+  .title h3 { font-size: 26px; font-weight: 800; line-height: 1.1; letter-spacing: -.01em; }
+  .title .genre { margin-top: 3px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+  .card p.pitch { margin: 0; color: var(--ink-2); font-size: 16px; line-height: 1.5; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .chips li { padding: 4px 10px; border-radius: 99px; background: var(--chip); color: var(--chip-ink); font-size: 13px; font-weight: 600; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: auto; padding-top: 6px; }
+  .btn-dark { background: var(--btn); color: var(--btn-ink); padding: 11px 16px; font-size: 15px; border-radius: 12px; }
+  .btn-dark:hover { transform: translateY(-1px); }
+  .btn-accent { background: var(--accent); color: var(--accent-ink); padding: 11px 16px; font-size: 15px; border-radius: 12px; }
+  .btn-accent:hover { transform: translateY(-1px); }
+  .soon { padding: 10px 14px; border-radius: 12px; background: var(--bg-2); color: var(--ink-2); font-weight: 700; font-size: 15px; }
+  .textlink { color: var(--ink-2); font-size: 14px; font-weight: 600; text-underline-offset: 3px; }
+  .textlink:hover { color: var(--accent); }
+
+  .featured { display: grid; grid-template-columns: 1.25fr 1fr; margin-bottom: 22px; }
+  .featured .banner { aspect-ratio: auto; min-height: 100%; display: flex; align-items: center; background: linear-gradient(180deg, #4d4bb8, #3b3496); }
+  .featured .banner img { height: auto; }
+  .featured .body { padding: 30px 32px 32px; }
+  .featured .title h3 { font-size: 32px; }
+  .featured p.pitch { font-size: 17px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+  /* Footer */
+  footer { margin-top: 60px; border-top: 1px solid var(--line); background: var(--bg-2); }
+  .foot { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; padding: 44px 0 36px; }
+  .foot h4 { margin: 0 0 12px; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+  .foot ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+  .foot a { text-decoration: none; font-weight: 600; }
+  .foot a:hover { color: var(--accent); }
+  .foot p { margin: 12px 0 0; max-width: 36ch; color: var(--ink-2); }
+  .legal { padding: 18px 0 30px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 14px; }
+
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; padding-bottom: 96px; }
+    .showcase { max-width: 560px; }
+    .featured { grid-template-columns: 1fr; }
+    .featured .banner { aspect-ratio: 1024 / 500; min-height: 0; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .foot { grid-template-columns: 1fr 1fr; }
+    .foot > div:first-child { grid-column: 1 / -1; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 16px; }
+    nav .navlinks { display: none; }
+    .hero-grid { padding-top: 16px; }
+    .hero p.lede { font-size: 17px; }
+    .grid { grid-template-columns: 1fr; }
+    .featured .body, .card .body { padding: 20px; }
+    .section-head { display: block; }
+    .title { flex-wrap: wrap; row-gap: 10px; }
+    .status { order: -1; margin: 0 100% 0 0; }
+  }
 </style>
 </head>
 <body>
-<header>
-  <h1>SUMAR_TECH</h1>
-  <p>Bright, simple games for your phone, tablet, PC and TV.</p>
+
+<header class="hero">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="./" aria-label="SUMAR_TECH home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        SUMAR_TECH
+      </a>
+      <div class="navlinks">
+        <a href="#games">Games</a>
+        <a href="https://www.youtube.com/@sumartech">YouTube</a>
+        <a href="mailto:sumartechcorp@gmail.com">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><b aria-hidden="true"></b>Stack Drop is live</span>
+        <h1>Small games.<br><em>Big one&#8209;more&#8209;go.</em></h1>
+        <p class="lede">Bright, simple games you can pick up in seconds, on your phone, tablet, PC and TV. Start with Stack Drop, right here in your browser.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://wapas.me/play/">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z"/></svg>
+            Play Stack Drop now
+          </a>
+          <a class="btn btn-ghost" href="#games">See all games</a>
+        </div>
+        <ul class="facts">
+          <li>Free to play</li>
+          <li>No sign-up</li>
+          <li>Phone, PC &amp; TV</li>
+        </ul>
+      </div>
+
+      <div class="showcase" aria-hidden="true">
+        <img class="t1" src="img/stack-drop-banner.webp" alt="" width="1024" height="500">
+        <img class="tile t2" src="img/rope-swing-banner.webp" alt="" width="1024" height="500">
+        <img class="tile t3" src="img/tick-town-banner.webp" alt="" width="1024" height="500">
+      </div>
+    </div>
+  </div>
 </header>
+
 <main>
-  <section class="games">
-    <article class="game">
-      <img src="img/stack-drop.png" alt="Stack Drop icon" width="88" height="88">
+  <section class="games wrap" id="games" aria-labelledby="games-h">
+    <div class="section-head">
       <div>
-        <h2>Stack Drop</h2>
-        <p>Tap to drop. Stack perfectly. How high can your tower go?</p>
-        <div class="links">
-          <a class="play" href="https://play.google.com/store/apps/details?id=com.sumartech.stackdrop">Get it on Google Play</a>
-          <a href="sumartech-legal/stack-drop/privacy.html">Privacy policy</a>
-          <a href="sumartech-legal/stack-drop/rules.html">Challenge rules</a>
+        <h2 id="games-h">Our games</h2>
+        <p>One-thumb fun for quick breaks, and a gentle clock game for little ones.</p>
+      </div>
+    </div>
+
+    <article class="card featured">
+      <a class="banner" href="https://wapas.me/play/" aria-label="Play Stack Drop in your browser">
+        <img src="img/stack-drop-banner.webp" alt="Stack Drop: a tower of blue blocks. One tap. How high can you go?" width="1024" height="500">
+      </a>
+      <div class="body">
+        <div class="title">
+          <img src="img/stack-drop-icon.webp" alt="" width="56" height="56">
+          <div>
+            <h3>Stack Drop</h3>
+            <div class="genre">Tower stacker · 1 tap</div>
+          </div>
+            <span class="status live">Out now</span>
+        </div>
+        <p class="pitch">Tap to drop. Anything over the edge gets sliced off, unless you land it perfectly. Climb past rooftops, through a storm and a golden sunset, all the way out to the stars.</p>
+        <ul class="chips" aria-label="Plays on">
+          <li>Browser</li><li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-accent" href="https://wapas.me/play/">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z"/></svg>
+            Play in browser
+          </a>
+          <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.stackdrop">Get it on Google Play</a>
+          <a class="textlink" href="https://www.youtube.com/watch?v=IJO51HjutYM">Watch the trailer</a>
         </div>
       </div>
     </article>
-    <article class="game">
-      <img src="img/rope-swing.png" alt="Rope Swing icon" width="88" height="88">
-      <div>
-        <h2>Rope Swing</h2>
-        <p>Hold to swing, let go to fly. Grab the golden ring and hop across the sky!</p>
-        <div class="links">
-          <a class="play" href="https://play.google.com/store/apps/details?id=com.sumartech.ropeswing">Get it on Google Play</a>
-          <a href="sumartech-legal/rope-swing/privacy.html">Privacy policy</a>
+
+    <div class="grid">
+      <article class="card">
+        <a class="banner" href="https://play.google.com/store/apps/details?id=com.sumartech.ropeswing" aria-label="Rope Swing on Google Play">
+          <img src="img/rope-swing-banner.webp" alt="Rope Swing: a little orange swinging from a rope at sunset" width="1024" height="500" loading="lazy">
+        </a>
+        <div class="body">
+          <div class="title">
+            <img src="img/rope-swing-icon.webp" alt="" width="56" height="56" loading="lazy">
+            <div>
+              <h3>Rope Swing</h3>
+              <div class="genre">Swing &amp; fly · hold to play</div>
+            </div>
+            <span class="status live">Out now</span>
+          </div>
+          <p class="pitch">Hold to swing, let go to fly. Grab the golden ring and hop across the sky.</p>
+          <ul class="chips" aria-label="Plays on">
+            <li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.ropeswing">Get it on Google Play</a>
+          </div>
         </div>
-      </div>
-    </article>
-    <article class="game">
-      <img src="img/dribble-home.png" alt="Dribble Home icon" width="88" height="88">
-      <div>
-        <h2>Dribble Home</h2>
-        <p>Two thumbs, one ball: chip, lob and juggle it all the way to the big final!</p>
-        <div class="links">
-          <span class="soon">Coming soon</span>
-          <a href="sumartech-legal/dribble-home/privacy.html">Privacy policy</a>
+      </article>
+
+      <article class="card">
+        <div class="banner">
+          <img src="img/dribble-home-banner.webp" alt="Dribble Home: a player chips a football over a hurdle" width="1024" height="500" loading="lazy">
         </div>
-      </div>
-    </article>
-    <article class="game">
-      <img src="img/tick-town.png" alt="Tick Town icon" width="88" height="88">
-      <div>
-        <h2>Tick Town</h2>
-        <p>Turn the clock and a whole little town plays through its day. For ages 3 to 9.</p>
-        <div class="links">
-          <span class="soon">Coming soon</span>
-          <a href="sumartech-legal/tick-town/privacy.html">Privacy policy</a>
+        <div class="body">
+          <div class="title">
+            <img src="img/dribble-home-icon.webp" alt="" width="56" height="56" loading="lazy">
+            <div>
+              <h3>Dribble Home</h3>
+              <div class="genre">Football runner · 2 thumbs</div>
+            </div>
+            <span class="status">Coming soon</span>
+          </div>
+          <p class="pitch">Two thumbs, one ball: chip, lob and juggle it all the way to the big final.</p>
+          <ul class="chips" aria-label="Plays on">
+            <li>Phone</li><li>Tablet</li>
+          </ul>
+          <div class="actions">
+            <span class="soon">Coming soon to Google Play</span>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+
+      <article class="card">
+        <div class="banner">
+          <img src="img/tick-town-banner.webp" alt="Tick Town: a big clock over a little town with a school bus" width="1024" height="500" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="title">
+            <img src="img/tick-town-icon.webp" alt="" width="56" height="56" loading="lazy">
+            <div>
+              <h3>Tick Town</h3>
+              <div class="genre">Learn to tell the time · ages 3–9</div>
+            </div>
+            <span class="status">Coming soon</span>
+          </div>
+          <p class="pitch">Turn the clock and a whole little town plays through its day. No ads, nothing to buy.</p>
+          <ul class="chips" aria-label="Plays on">
+            <li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li>
+          </ul>
+          <div class="actions">
+            <span class="soon">Coming soon to Google Play</span>
+            <a class="textlink" href="https://www.youtube.com/watch?v=BNB_fBXueGU">Watch the trailer</a>
+          </div>
+        </div>
+      </article>
+    </div>
   </section>
 </main>
+
 <footer>
-  Contact: <a href="mailto:sumartechcorp@gmail.com">sumartechcorp@gmail.com</a>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="./">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          SUMAR_TECH
+        </a>
+        <p>Bright, simple games for your phone, tablet, PC and TV.</p>
+      </div>
+      <div>
+        <h4>Privacy policies</h4>
+        <ul>
+          <li><a href="sumartech-legal/stack-drop/privacy.html">Stack Drop</a></li>
+          <li><a href="sumartech-legal/rope-swing/privacy.html">Rope Swing</a></li>
+          <li><a href="sumartech-legal/dribble-home/privacy.html">Dribble Home</a></li>
+          <li><a href="sumartech-legal/tick-town/privacy.html">Tick Town</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:sumartechcorp@gmail.com">sumartechcorp@gmail.com</a></li>
+          <li><a href="https://www.youtube.com/@sumartech">YouTube</a></li>
+          <li><a href="sumartech-legal/stack-drop/rules.html">Stack Drop challenge rules</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">© 2026 SUMAR_TECH. Google Play and the Google Play logo are trademarks of Google LLC.</div>
+  </div>
 </footer>
+
 </body>
 </html>
