@@ -211,14 +211,31 @@
   .card p.pitch { margin: 0; color: var(--ink-2); font-size: 16px; line-height: 1.5; }
   .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
   .chips li { padding: 4px 10px; border-radius: 99px; background: var(--chip); color: var(--chip-ink); font-size: 13px; font-weight: 600; }
-  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: auto; padding-top: 6px; }
-  .btn-dark { background: var(--btn); color: var(--btn-ink); padding: 11px 16px; font-size: 15px; border-radius: 12px; }
-  .btn-dark:hover { transform: translateY(-1px); }
-  .btn-accent { background: var(--accent); color: var(--accent-ink); padding: 11px 16px; font-size: 15px; border-radius: 12px; }
+  /* One row, so every card's buttons sit on the same line however long its blurb is. The store
+     button takes the room that's left; anything beside it keeps its own width. */
+  .actions { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px; margin-top: auto; padding-top: 6px; }
+  .actions > * { min-height: 48px; }
+  .btn-dark, .btn-accent, .btn-quiet { justify-content: center; padding: 12px 18px; font-size: 15px; border-radius: 13px; }
+  .btn-dark { flex: 1 1 auto; background: var(--btn); color: var(--btn-ink); box-shadow: 0 10px 22px -14px rgba(10, 8, 25, .9); }
+  .btn-dark:hover { transform: translateY(-1px); box-shadow: 0 16px 28px -14px rgba(10, 8, 25, .95); }
+  .btn-accent { flex: 1 1 auto; background: var(--accent); color: var(--accent-ink); }
   .btn-accent:hover { transform: translateY(-1px); }
-  .soon { padding: 10px 14px; border-radius: 12px; background: var(--bg-2); color: var(--ink-2); font-weight: 700; font-size: 15px; }
+  /* Secondary: same height and radius, outlined so the store button stays the one that stands out. */
+  .btn-quiet { flex: 0 0 auto; background: transparent; color: var(--ink-2); box-shadow: inset 0 0 0 1.5px var(--chip); }
+  /* Three to a row there is no space for "Get it on Google Play" and a worded second button, so the
+     trailer keeps its icon and drops its label; it gets the label back below, one card to a row. */
+  .btn-icon { flex: 0 0 48px; width: 48px; padding: 0; }
+  .btn-icon svg { width: 20px; height: 20px; }
+  .btn-icon span { display: none; }
+  .btn-quiet:hover { color: var(--ink); background: var(--bg-2); box-shadow: inset 0 0 0 1.5px var(--ink-2); transform: translateY(-1px); }
+  .btn:active { transform: translateY(1px) scale(.995); }
+  .btn:focus-visible, .textlink:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  /* Not a button: nothing here is clickable yet, so it must not look pressable. */
+  .soon { display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex: 1 1 auto; padding: 12px 18px; border-radius: 13px; background: transparent; box-shadow: inset 0 0 0 1.5px var(--chip); color: var(--ink-2); font-weight: 600; font-size: 15px; }
+  .soon svg { width: 16px; height: 16px; flex: none; opacity: .75; }
   .textlink { color: var(--ink-2); font-size: 14px; font-weight: 600; text-underline-offset: 3px; }
   .textlink:hover { color: var(--accent); }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover, .btn:active { transform: none; } }
 
   .featured { display: grid; grid-template-columns: 1.25fr 1fr; margin-bottom: 22px; }
   .featured .banner { aspect-ratio: auto; min-height: 100%; display: flex; align-items: center; background: linear-gradient(180deg, #4d4bb8, #3b3496); }
@@ -254,6 +271,9 @@
     .hero p.lede { font-size: 17px; }
     .grid { grid-template-columns: 1fr; }
     .featured .body, .card .body { padding: 20px; }
+    /* One card to a row: there is room for the word again. */
+    .btn-icon { flex: 0 0 auto; width: auto; padding: 12px 18px; }
+    .btn-icon span { display: inline; }
     .section-head { display: block; }
     .title { flex-wrap: wrap; row-gap: 10px; }
     .status { order: -1; margin: 0 100% 0 0; }
@@ -336,8 +356,8 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z"/></svg>
             Play in browser
           </a>
-          <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.stackdrop">Get it on Google Play</a>
-          <a class="textlink" href="https://www.youtube.com/watch?v=IJO51HjutYM">Watch the trailer</a>
+          <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.stackdrop"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
+          <a class="btn btn-quiet" href="https://www.youtube.com/watch?v=IJO51HjutYM"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.3 6.2 5 3.2a.7.7 0 0 1 0 1.2l-5 3.2a.7.7 0 0 1-1.1-.6V8.8a.7.7 0 0 1 1.1-.6Z"/></svg><span>Trailer</span></a>
         </div>
       </div>
     </article>
@@ -361,7 +381,7 @@
             <li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li>
           </ul>
           <div class="actions">
-            <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.ropeswing">Get it on Google Play</a>
+            <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.ropeswing"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
           </div>
         </div>
       </article>
@@ -384,7 +404,7 @@
             <li>Phone</li><li>Tablet</li>
           </ul>
           <div class="actions">
-            <span class="soon">Coming soon to Google Play</span>
+            <span class="soon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.5V12l3 2"/></svg><span>Coming soon to Google Play</span></span>
           </div>
         </div>
       </article>
@@ -407,8 +427,8 @@
             <li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li>
           </ul>
           <div class="actions">
-            <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.ticktown">Get it on Google Play</a>
-            <a class="textlink" href="https://www.youtube.com/watch?v=BNB_fBXueGU">Watch the trailer</a>
+            <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.ticktown"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
+            <a class="btn btn-quiet btn-icon" href="https://www.youtube.com/watch?v=BNB_fBXueGU" title="Watch the Tick Town trailer" aria-label="Watch the Tick Town trailer"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.3 6.2 5 3.2a.7.7 0 0 1 0 1.2l-5 3.2a.7.7 0 0 1-1.1-.6V8.8a.7.7 0 0 1 1.1-.6Z"/></svg><span>Trailer</span></a>
           </div>
         </div>
       </article>
