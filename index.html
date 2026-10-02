@@ -12,7 +12,55 @@
 <meta property="og:url" content="https://sumar7.github.io/">
 <meta property="og:image" content="https://sumar7.github.io/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sumar7.github.io/">
 <link rel="icon" href="img/stack-drop-icon.webp">
+<!-- Lets search engines show these as apps, with the name, publisher and price. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sumar7.github.io/#org",
+      "name": "SUMAR_TECH",
+      "url": "https://sumar7.github.io/",
+      "email": "sumartechcorp@gmail.com"
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "Tick Town: Learn to Tell Time",
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "Educational",
+      "operatingSystem": "Android",
+      "description": "Learn to tell the time on a real clock, for ages 3 to 9. Turn the hour hand and the minute hand and a whole little town plays through its day. No ads, nothing to buy, no data collected.",
+      "url": "https://play.google.com/store/apps/details?id=com.sumartech.ticktown",
+      "image": "https://sumar7.github.io/img/tick-town-icon.webp",
+      "publisher": { "@id": "https://sumar7.github.io/#org" },
+      "offers": { "@type": "Offer", "price": "2.99", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "Stack Drop: Tower Stacker",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Android",
+      "url": "https://play.google.com/store/apps/details?id=com.sumartech.stackdrop",
+      "image": "https://sumar7.github.io/img/stack-drop-icon.webp",
+      "publisher": { "@id": "https://sumar7.github.io/#org" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "Rope Swing: Balloon Hop",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Android",
+      "url": "https://play.google.com/store/apps/details?id=com.sumartech.ropeswing",
+      "image": "https://sumar7.github.io/img/rope-swing-icon.webp",
+      "publisher": { "@id": "https://sumar7.github.io/#org" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -352,14 +400,14 @@
               <h3>Tick Town</h3>
               <div class="genre">Learn to tell the time · ages 3–9</div>
             </div>
-            <span class="status">Coming soon</span>
+            <span class="status live">Out now</span>
           </div>
-          <p class="pitch">Turn the clock and a whole little town plays through its day. No ads, nothing to buy.</p>
+          <p class="pitch">Learn to tell the time on a real clock. Turn the hour hand and the minute hand and a whole little town plays through its day. No ads, nothing to buy, no data collected.</p>
           <ul class="chips" aria-label="Plays on">
             <li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li>
           </ul>
           <div class="actions">
-            <span class="soon">Coming soon to Google Play</span>
+            <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.ticktown">Get it on Google Play</a>
             <a class="textlink" href="https://www.youtube.com/watch?v=BNB_fBXueGU">Watch the trailer</a>
           </div>
         </div>
