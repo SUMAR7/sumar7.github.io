@@ -15,11 +15,12 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="The words FOR YOU in fireworks over a night harbour" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="module" crossorigin src="./assets/index-C2umN2FB.js"></script>
+    <script type="module" crossorigin src="./assets/index-DAvcr43V.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/dist-62TeNfsI.js">
     <link rel="modulepreload" crossorigin href="./assets/definitions-BdWVgBTV.js">
     <link rel="modulepreload" crossorigin href="./assets/definitions-DlpntO5o.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-BV0DDuUW.css">
+    <link rel="modulepreload" crossorigin href="./assets/consent-status.enum-CdMsqkrY.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-D_oNX17x.css">
   </head>
   <body>
     <div id="app">
@@ -40,14 +41,18 @@
         </div>
         <div class="tap" id="tap-word">TAP ANYWHERE</div>
         <div class="tv">◀ ▶ LANE &nbsp;·&nbsp; OK LAUNCH &nbsp;·&nbsp; OK BURST</div>
+        <div class="title-row">
+        <button id="b-daily" class="btn primary"><span id="daily-label">DAILY SKY</span></button>
         <button id="b-free" class="btn"><svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M32 6v12M32 46v12M6 32h12M46 32h12M13.6 13.6l8.5 8.5M41.9 41.9l8.5 8.5M50.4 13.6l-8.5 8.5M22.1 41.9l-8.5 8.5"/></g></svg>FREE SHOW</button>
         <button id="b-letters" class="btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>SKY LETTERS</button>
+        </div>
         <div id="gift" hidden>A MESSAGE FOR YOU</div>
       </div>
 
       <div id="hud" hidden>
         <div id="jar" aria-label="Ember jar"><i id="jar-fill"></i><b id="jar-n"></b></div>
         <b id="lvl"></b>
+        <b id="wind" hidden>WIND <span id="wind-arrow"></span></b>
       </div>
       <div id="corner"><button id="b-pause" class="ibtn" aria-label="Pause"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.5" height="14" rx="1.5" fill="currentColor"/><rect x="13.5" y="5" width="4.5" height="14" rx="1.5" fill="currentColor"/></svg></button></div>
 
@@ -59,6 +64,7 @@
       </div>
 
       <div id="p-won" class="end" hidden>
+        <div id="won-note" class="why small" hidden></div>
         <div class="stars"><i></i><i></i><i></i></div>
         <div class="row">
           <button id="b-next" class="btn primary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>NEXT</button>
@@ -70,6 +76,7 @@
         <div id="lost-why" class="why"></div>
         <div class="row">
           <button id="b-retry" class="btn primary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.5 8A7.5 7.5 0 1 0 19.5 13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M19.5 3.5V8.5H14.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>RETRY</button>
+          <button id="b-more" class="btn" hidden></button>
           <button id="b-easy" class="btn" hidden>EASY TRY</button>
         </div>
       </div>
@@ -78,9 +85,21 @@
           <button id="b-resume" class="btn primary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>PLAY</button>
           <button id="b-restart" class="btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.5 8A7.5 7.5 0 1 0 19.5 13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M19.5 3.5V8.5H14.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>RESTART</button>
           <button id="b-levels" class="btn"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></g></svg>LEVELS</button>
+          <button id="b-pass" class="btn" hidden>SKY PASS</button>
+          <button id="b-privacy" class="btn" hidden>PRIVACY</button>
           <button id="b-pic" class="btn" aria-label="Picture quality"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 21h8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span id="pic-label">AUTO</span></button>
           <button id="b-snd" class="btn" aria-label="Sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="wave" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/><path class="x" d="M16 9l6 6m0-6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span id="snd-label">ON</span></button>
           <button id="b-home" class="btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z" fill="currentColor"/></svg>HOME</button>
+        </div>
+      </div>
+      <div id="p-pass" class="dim" hidden>
+        <div class="card">
+          <div id="pass-name" class="why"></div>
+          <div id="pass-tag" class="pass-tag"></div>
+          <p id="pass-what" class="pass-what"></p>
+          <button id="b-buy" class="btn primary"></button>
+          <button id="b-restore" class="btn">RESTORE</button>
+          <button id="b-pass-close" class="btn">NOT NOW</button>
         </div>
       </div>
       <div id="p-levels" class="dim" hidden>
