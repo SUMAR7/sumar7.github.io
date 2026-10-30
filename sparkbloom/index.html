@@ -15,12 +15,12 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="The words FOR YOU in fireworks over a night harbour" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="module" crossorigin src="./assets/index-Dj8IW5wE.js"></script>
+    <script type="module" crossorigin src="./assets/index-Ca3h5tlw.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/dist-62TeNfsI.js">
     <link rel="modulepreload" crossorigin href="./assets/definitions-BdWVgBTV.js">
     <link rel="modulepreload" crossorigin href="./assets/definitions-DlpntO5o.js">
     <link rel="modulepreload" crossorigin href="./assets/consent-status.enum-CdMsqkrY.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-BG2QUup9.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-CoQKTNQG.css">
   </head>
   <body>
     <div id="app">
@@ -90,7 +90,7 @@
           <button id="b-levels" class="btn"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></g></svg>LEVELS</button>
           <button id="b-album-pause" class="btn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.500" y="3.500" width="7.500" height="7.500" rx="2" fill="currentColor"/><rect x="13" y="3.500" width="7.500" height="7.500" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3.500" y="13" width="7.500" height="7.500" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="7.500" height="7.500" rx="2" fill="currentColor"/></svg>SKY ALBUM</button>
           <button id="b-pass" class="btn" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.500l3 6.300 6.900.9-5 4.800 1.300 6.900L12 17.100l-6.200 3.300 1.300-6.900-5-4.800 6.900-.9z" fill="currentColor"/></svg>SKY PASS</button>
-          <button id="b-privacy" class="btn" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.800l8 3v6c0 4.800-3.200 8-8 9.400-4.800-1.400-8-4.600-8-9.400v-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>PRIVACY</button>
+          <button id="b-privacy" class="btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.800l8 3v6c0 4.800-3.200 8-8 9.400-4.800-1.400-8-4.600-8-9.400v-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>PRIVACY</button>
           <button id="b-games" class="btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10a4 4 0 0 1 4 4v5a2.500 2.500 0 0 1-4.600 1.300L15 16H9l-1.400 2.300A2.500 2.500 0 0 1 3 17v-5a4 4 0 0 1 4-4z" fill="currentColor"/></svg>MORE GAMES</button>
           <button id="b-pic" class="btn" aria-label="Picture quality"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 21h8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span id="pic-label">AUTO</span></button>
           <button id="b-snd" class="btn" aria-label="Sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="wave" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/><path class="x" d="M16 9l6 6m0-6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span id="snd-label">ON</span></button>
@@ -105,6 +105,11 @@
       <div id="p-games" class="dim screen" hidden>
         <div class="screen-bar"><button id="b-games-back" class="btn round" aria-label="Back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="screen-title">MORE GAMES</div><span class="screen-gap"></span></div>
         <div id="games-list"></div>
+      </div>
+      <div id="p-policy" class="dim screen" hidden>
+        <div class="screen-bar"><button id="b-policy-back" class="btn round" aria-label="Back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="screen-title">PRIVACY</div><span class="screen-gap"></span></div>
+        <div id="policy-text"></div>
+        <button id="b-ad-choices" class="btn" hidden>AD CHOICES</button>
       </div>
       <div id="p-pass" class="dim" hidden>
         <div class="card">
@@ -122,9 +127,9 @@
         <div class="screen-bar"><button id="b-levels-back" class="btn round" aria-label="Back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="screen-title">LEVELS</div><span class="screen-gap"></span></div>
         <div class="screen-body">
           <div class="page-head">
-            <button id="b-page-prev" class="btn round" aria-label="Earlier levels"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button id="b-page-prev" class="btn page-arrow" aria-label="Earlier levels"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 4.500L6.500 12l9.500 7.500z" fill="currentColor"/></svg></button>
             <div class="world-label"><span id="page-name"></span><span id="page-stars"></span></div>
-            <button id="b-page-next" class="btn round" aria-label="Later levels"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button id="b-page-next" class="btn page-arrow" aria-label="Later levels"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4.500l9.500 7.500L8 19.500z" fill="currentColor"/></svg></button>
           </div>
           <div id="grid"></div>
         </div>
