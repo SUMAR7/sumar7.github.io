@@ -311,6 +311,9 @@
     .featured { grid-template-columns: 1fr; }
     .featured .banner { aspect-ratio: 1024 / 500; min-height: 0; }
     .grid { grid-template-columns: repeat(2, 1fr); }
+    /* Two narrow cards to a row: the name and the status pill no longer fit side by side. */
+    .grid .title { flex-wrap: wrap; row-gap: 10px; }
+    .grid .status { order: -1; margin: 0 100% 0 0; }
     .foot { grid-template-columns: 1fr 1fr; }
     .foot > div:first-child { grid-column: 1 / -1; }
   }
@@ -327,6 +330,10 @@
     .section-head { display: block; }
     .title { flex-wrap: wrap; row-gap: 10px; }
     .status { order: -1; margin: 0 100% 0 0; }
+  }
+  /* The email address is too long to share a row here. */
+  @media (max-width: 380px) {
+    .foot { grid-template-columns: 1fr; }
   }
 </style>
 </head>
