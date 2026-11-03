@@ -149,6 +149,8 @@
     --btn-ink: #ffffff;
     --chip: #f1eaf9;
     --chip-ink: #4c3d73;
+    --how: #ff6b4a1c;
+    --how-ink: #b83d22;
     --shadow: 0 1px 0 rgba(28, 22, 51, .04), 0 18px 40px -18px rgba(28, 22, 51, .28);
     --hero-a: #2a1f5c;
     --hero-b: #16122b;
@@ -167,6 +169,8 @@
       --btn-ink: #16122b;
       --chip: #2a2450;
       --chip-ink: #d6ccff;
+    --how: #ff6b4a2e;
+    --how-ink: #ffb4a3;
       --shadow: 0 1px 0 rgba(255, 255, 255, .03), 0 20px 44px -20px rgba(0, 0, 0, .7);
     }
   }
@@ -183,6 +187,8 @@
     --btn-ink: #16122b;
     --chip: #2a2450;
     --chip-ink: #d6ccff;
+    --how: #ff6b4a2e;
+    --how-ink: #ffb4a3;
     --shadow: 0 1px 0 rgba(255, 255, 255, .03), 0 20px 44px -20px rgba(0, 0, 0, .7);
   }
 
@@ -281,6 +287,8 @@
   .card p.pitch { margin: 0; color: var(--ink-2); font-size: 16px; line-height: 1.5; }
   .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
   .chips li { padding: 4px 10px; border-radius: 99px; background: var(--chip); color: var(--chip-ink); font-size: 13px; font-weight: 600; }
+  /* how you play it (multiplayer, game pad, TV remote): set apart from the devices */
+  .chips li.how { background: var(--how); color: var(--how-ink); }
   /* One row, so every card's buttons sit on the same line however long its blurb is. The store
      button takes the room that's left; anything beside it keeps its own width. */
   .actions { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px; margin-top: auto; padding-top: 6px; }
@@ -425,8 +433,8 @@
             <span class="status live">Out now</span>
         </div>
         <p class="pitch">Tap to drop. Anything over the edge gets sliced off, unless you land it perfectly. Climb past rooftops, through a storm and a golden sunset, all the way out to the stars.</p>
-        <ul class="chips" aria-label="Plays on">
-          <li>Browser</li><li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li>
+        <ul class="chips" aria-label="Plays on, and how">
+          <li>Browser</li><li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li><li class="how">Game pad</li><li class="how">TV remote</li>
         </ul>
         <div class="actions">
           <a class="btn btn-accent" href="https://wapas.me/play/">
@@ -454,8 +462,8 @@
             <span class="status live">Out now</span>
           </div>
           <p class="pitch">Grab a roller and paint the floor. When the timer runs out, whoever has painted the most wins. Up to four players on one screen with game pads or the TV remote, or play against bots. Seven arenas, eight power-ups, and one payment: no ads, nothing to buy inside.</p>
-          <ul class="chips" aria-label="Plays on">
-            <li>Android TV</li><li>Phone</li><li>Tablet</li><li>PC</li>
+          <ul class="chips" aria-label="Plays on, and how">
+            <li>Android TV</li><li>Phone</li><li>Tablet</li><li>PC</li><li class="how">Multiplayer</li><li class="how">Game pad</li><li class="how">TV remote</li>
           </ul>
           <div class="actions">
             <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.paintpanic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
@@ -500,8 +508,8 @@
             <span class="status live">Out now</span>
           </div>
           <p class="pitch">Drive a little cargo truck up a very big mountain and keep the crates in the bed. Five worlds from Base Camp to the Summit, with rope bridges, jumps and steep climbs. Plays offline.</p>
-          <ul class="chips" aria-label="Plays on">
-            <li>Phone</li><li>Tablet</li><li>Android TV</li>
+          <ul class="chips" aria-label="Plays on, and how">
+            <li>Phone</li><li>Tablet</li><li>Android TV</li><li class="how">Game pad</li><li class="how">TV remote</li>
           </ul>
           <div class="actions">
             <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.summithaul"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
@@ -524,8 +532,8 @@
             <span class="status live">Out now</span>
           </div>
           <p class="pitch">Somebody has mislaid half the town. Search a hand-drawn town full of lost things and find them all, offline and at your own pace.</p>
-          <ul class="chips" aria-label="Plays on">
-            <li>Phone</li><li>Tablet</li>
+          <ul class="chips" aria-label="Plays on, and how">
+            <li>Phone</li><li>Tablet</li><li class="how">Game pad</li>
           </ul>
           <div class="actions">
             <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.mislaid"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
@@ -547,8 +555,8 @@
             <span class="status live">Out now</span>
           </div>
           <p class="pitch">Hold to swing, let go to fly. Grab the golden ring and hop across the sky.</p>
-          <ul class="chips" aria-label="Plays on">
-            <li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li>
+          <ul class="chips" aria-label="Plays on, and how">
+            <li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li><li class="how">Game pad</li><li class="how">TV remote</li>
           </ul>
           <div class="actions">
             <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.ropeswing"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
@@ -570,8 +578,8 @@
             <span class="status live">Out now</span>
           </div>
           <p class="pitch">Two thumbs, one ball: chip, lob and juggle it all the way to the big final.</p>
-          <ul class="chips" aria-label="Plays on">
-            <li>Phone</li><li>Tablet</li><li>PC</li>
+          <ul class="chips" aria-label="Plays on, and how">
+            <li>Phone</li><li>Tablet</li><li>PC</li><li class="how">Game pad</li>
           </ul>
           <div class="actions">
             <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.dribblehome"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
@@ -593,8 +601,8 @@
             <span class="status live">Out now</span>
           </div>
           <p class="pitch">Learn to tell the time on a real clock. Turn the hour hand and the minute hand and a whole little town plays through its day. No ads, nothing to buy, no data collected.</p>
-          <ul class="chips" aria-label="Plays on">
-            <li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li>
+          <ul class="chips" aria-label="Plays on, and how">
+            <li>Phone</li><li>Tablet</li><li>Android TV</li><li>PC</li><li class="how">Game pad</li><li class="how">TV remote</li>
           </ul>
           <div class="actions">
             <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.ticktown"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
@@ -617,8 +625,8 @@
             <span class="status live">Out now</span>
           </div>
           <p class="pitch">Spell a word and it drops in for real. A COW tips the see-saw, a WHALE floats you across, a RAINBOW bridges the sky. 80 levels, from easy 3-letter words to big ones.</p>
-          <ul class="chips" aria-label="Plays on">
-            <li>Phone</li><li>Tablet</li><li>PC</li>
+          <ul class="chips" aria-label="Plays on, and how">
+            <li>Phone</li><li>Tablet</li><li>PC</li><li class="how">Game pad</li>
           </ul>
           <div class="actions">
             <a class="btn btn-dark" href="https://play.google.com/store/apps/details?id=com.sumartech.spellcrane"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
