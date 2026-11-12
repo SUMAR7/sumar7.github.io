@@ -24,7 +24,8 @@
   "url": "https://play.google.com/store/apps/details?id=com.sumartech.skyport",
   "image": "https://sumar7.github.io/img/skyport-icon.webp",
   "publisher": { "@type": "Organization", "name": "SUMAR_TECH", "url": "https://sumar7.github.io/" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "video": { "@type": "VideoObject", "name": "Skyport Isles: Official Trailer", "description": "Draw the path, land the planes: 60 flights over 5 islands.", "thumbnailUrl": "https://sumar7.github.io/skyport/trailer-poster.webp", "uploadDate": "2026-11-12", "embedUrl": "https://www.youtube-nocookie.com/embed/jDsv8V4-v8s", "contentUrl": "https://www.youtube.com/watch?v=jDsv8V4-v8s" }
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,6 +64,13 @@
   section { padding: 34px 0; border-top: 1px solid var(--line); }
   .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .shots img { width: 100%; height: auto; border-radius: 18px; box-shadow: var(--shadow); background: var(--bg-2); }
+  .trailer { position: relative; display: block; aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); background: #0b2a4a; }
+  .trailer img, .trailer iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+  .trailer .play { position: absolute; left: 50%; top: 77%; width: 84px; height: 84px; margin: -42px 0 0 -42px; border-radius: 50%; background: rgba(255, 255, 255, .94); box-shadow: 0 10px 30px rgba(0, 0, 0, .35); display: grid; place-items: center; transition: transform .15s; }
+  .trailer .play svg { width: 34px; height: 34px; margin-left: 5px; color: #ff4e45; }
+  .trailer:hover .play, .trailer:focus-visible .play { transform: scale(1.08); }
+  .trailer:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .note { font-size: 13px; color: var(--ink-2); margin: 10px 0 0; }
   .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .feature { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
   .feature b { display: block; font: 700 18px/1.2 "Bricolage Grotesque", sans-serif; margin-bottom: 6px; }
@@ -96,6 +104,29 @@
     </div>
     <img class="banner" src="../img/skyport-banner.webp" alt="Skyport Isles: a red toy plane lining up with an island runway" width="1024" height="500">
   </header>
+
+  <section aria-labelledby="trailer-h">
+    <h2 id="trailer-h">Trailer</h2>
+    <a class="trailer" id="trailer" href="https://www.youtube.com/watch?v=jDsv8V4-v8s" aria-label="Play the Skyport Isles trailer">
+      <img src="trailer-poster.webp" alt="" width="960" height="540" loading="lazy">
+      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></svg></span>
+    </a>
+    <p class="note">The video plays from YouTube once you press play.</p>
+  </section>
+  <script>
+    document.getElementById('trailer').addEventListener('click', function (e) {
+      e.preventDefault();
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/jDsv8V4-v8s?autoplay=1&rel=0&playsinline=1';
+      f.title = 'Skyport Isles trailer';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      var box = document.createElement('div');
+      box.className = 'trailer';
+      box.appendChild(f);
+      this.replaceWith(box);
+    });
+  </script>
 
   <section aria-labelledby="shots-h">
     <h2 id="shots-h">Screenshots</h2>
