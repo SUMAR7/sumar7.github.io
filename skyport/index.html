@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyport Isles · SUMAR_TECH</title>
+<meta name="description" content="Skyport Isles is a path-drawing air traffic puzzle: draw a line from each plane to the runway of its colour and land them all safely. 60 flights over 5 islands with helicopters, seaplanes, ash clouds and moving aircraft carriers.">
+<meta name="theme-color" content="#1c9be6">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Skyport Isles">
+<meta property="og:description" content="Draw the path. Land the planes. A bright air traffic puzzle by SUMAR_TECH.">
+<meta property="og:url" content="https://sumar7.github.io/skyport/">
+<meta property="og:image" content="https://sumar7.github.io/img/skyport-banner.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sumar7.github.io/skyport/">
+<link rel="icon" href="../img/skyport-icon.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Skyport Isles",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Android",
+  "url": "https://play.google.com/store/apps/details?id=com.sumartech.skyport",
+  "image": "https://sumar7.github.io/img/skyport-icon.webp",
+  "publisher": { "@type": "Organization", "name": "SUMAR_TECH", "url": "https://sumar7.github.io/" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf8f3; --bg-2: #f3ede4; --surface: #ffffff; --line: #ebe2d6;
+    --ink: #1c1633; --ink-2: #5d5474; --accent: #ffb020; --btn: #1c1633; --btn-ink: #ffffff;
+    --chip: #fff1d6; --chip-ink: #7a4300;
+    --shadow: 0 1px 0 rgba(28, 22, 51, .04), 0 18px 40px -18px rgba(28, 22, 51, .28);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #110e22; --bg-2: #17132e; --surface: #1c1838; --line: #2c2650; --ink: #f4f0ff; --ink-2: #b1a8cf;
+      --btn: #f4f0ff; --btn-ink: #16122b; --chip: #3a2c12; --chip-ink: #ffd98a;
+      --shadow: 0 1px 0 rgba(255, 255, 255, .03), 0 20px 44px -20px rgba(0, 0, 0, .7); }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 500 16px/1.6 "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  .top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .top a { text-decoration: none; font-weight: 700; color: var(--ink-2); }
+  .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; padding: 24px 0 40px; }
+  .hero img.banner { width: 100%; height: auto; border-radius: 22px; box-shadow: var(--shadow); }
+  .title { display: flex; gap: 14px; align-items: center; }
+  .title img { width: 64px; height: 64px; border-radius: 16px; }
+  h1 { font: 800 clamp(34px, 5vw, 52px)/1.05 "Bricolage Grotesque", sans-serif; margin: 0; letter-spacing: -.02em; }
+  .tag { font: 600 20px/1.3 "Bricolage Grotesque", sans-serif; color: var(--ink-2); margin: 14px 0 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 18px 0 22px; }
+  .chips li { background: var(--chip); color: var(--chip-ink); padding: 5px 12px; border-radius: 99px; font-size: 14px; font-weight: 700; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 14px; font-weight: 700; text-decoration: none; background: var(--btn); color: var(--btn-ink); }
+  .btn svg { width: 22px; height: 22px; }
+  .soon { display: block; font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+  h2 { font: 800 28px/1.15 "Bricolage Grotesque", sans-serif; margin: 0 0 14px; }
+  section { padding: 34px 0; border-top: 1px solid var(--line); }
+  .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .shots img { width: 100%; height: auto; border-radius: 18px; box-shadow: var(--shadow); background: var(--bg-2); }
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .feature { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+  .feature b { display: block; font: 700 18px/1.2 "Bricolage Grotesque", sans-serif; margin-bottom: 6px; }
+  .feature p { margin: 0; color: var(--ink-2); }
+  ol.how { padding-left: 20px; } ol.how li { margin: 6px 0; }
+  footer { padding: 30px 0 50px; color: var(--ink-2); font-size: 14px; display: flex; flex-wrap: wrap; gap: 18px; border-top: 1px solid var(--line); }
+  @media (max-width: 800px) {
+    .hero { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: 1fr; }
+    .features { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top"><a href="../">← SUMAR_TECH Games</a><a href="privacy.html">Privacy</a></nav>
+
+  <header class="hero">
+    <div>
+      <div class="title">
+        <img src="../img/skyport-icon.webp" alt="" width="64" height="64">
+        <h1>Skyport Isles</h1>
+      </div>
+      <p class="tag">Draw the path. Land the planes.</p>
+      <p>Colourful planes call in from every edge of the screen, and you're the control tower. Drag a line from each plane straight onto the runway of its colour and watch it touch down. As the sky gets busier you'll juggle jets, helicopters and seaplanes, steer clear of ash clouds and land on aircraft carriers that are sailing the whole time. Just don't let two planes meet.</p>
+      <ul class="chips" aria-label="Plays on, and how">
+        <li>Phone</li><li>Tablet</li><li>Offline</li><li>60 flights</li><li>Multi-touch</li><li>Haptics</li>
+      </ul>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.sumartech.skyport"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
+      <span class="soon">Coming soon to Google Play.</span>
+    </div>
+    <img class="banner" src="../img/skyport-banner.webp" alt="Skyport Isles: a red toy plane lining up with an island runway" width="1024" height="500">
+  </header>
+
+  <section aria-labelledby="shots-h">
+    <h2 id="shots-h">Screenshots</h2>
+    <div class="shots">
+      <img src="shots/palm.webp" alt="A blue plane follows its dotted path to the blue runway on Palm Cove" width="960" height="600" loading="lazy">
+      <img src="shots/volcano.webp" alt="A drifting ash cloud flashes a red warning near a plane on Volcano Ridge" width="960" height="600" loading="lazy">
+      <img src="shots/frost.webp" alt="Seaplanes heading for buoy-marked water lanes around snowy Frost Harbor" width="960" height="600" loading="lazy">
+      <img src="shots/fleet.webp" alt="Two aircraft carriers sail beside the island in Fleet Command" width="960" height="600" loading="lazy">
+    </div>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How to play</h2>
+    <ol class="how">
+      <li><b>Watch the edges.</b> A marker shows where the next plane will appear and which colour it is.</li>
+      <li><b>Draw a path</b> from the plane to the runway of the same colour. Come in straight, from the chevron end, and the line locks on.</li>
+      <li><b>Keep them apart.</b> Planes that get too close flash red; two that touch cost you a life. Lose all three and the flight is grounded.</li>
+      <li><b>Land the goal.</b> Bring in every plane on the boarding pass to finish the flight. Land them back to back for streaks, and finish with all lives for three stars.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="feat-h">
+    <h2 id="feat-h">What's inside</h2>
+    <div class="features">
+      <div class="feature"><b>5 islands, 60 flights</b><p>Palm Cove, Coral Keys, Volcano Ridge, Frost Harbor and Fleet Command, each ending in a busy Rush finale.</p></div>
+      <div class="feature"><b>New aircraft as you go</b><p>Fast jets, helicopters that land on helipads from any direction, and seaplanes that touch down on water lanes.</p></div>
+      <div class="feature"><b>Moving carriers</b><p>On Fleet Command the runway itself is sailing. Line up behind the deck and land on the move.</p></div>
+      <div class="feature"><b>Boosters</b><p>Slow-Mo halves the speed of every aircraft for a few seconds, and Tower Assist lands a waiting plane for you.</p></div>
+      <div class="feature"><b>Paint shop</b><p>Spend the coins you earn on liveries for your whole fleet: Candy Stripe, Retro Chrome, Midnight and Royal Gold.</p></div>
+      <div class="feature"><b>Made for touch</b><p>Draw two paths at once on a tablet, feel every touchdown through haptics, and play in portrait or landscape, fully offline.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="free-h">
+    <h2 id="free-h">Free to play</h2>
+    <p>Skyport Isles is free, with occasional ads between flights and optional ads you can choose to watch to continue after a crash, double your coins, or get a free booster. A one-time Remove Ads purchase turns off the between-flight ads for good; the optional reward videos stay available if you want them.</p>
+  </section>
+
+  <footer>
+    <span>© 2026 SUMAR_TECH</span>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="mailto:sumartechcorp@gmail.com">sumartechcorp@gmail.com</a>
+    <a href="../">More games</a>
+  </footer>
+</div>
+</body>
+</html>
