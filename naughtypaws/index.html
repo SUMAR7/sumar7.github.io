@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naughty Paws: Cat Mischief · SUMAR_TECH</title>
+<meta name="description" content="Naughty Paws: be the cat, cause chaos and don't get caught. Knock cups off tables, unroll the toilet paper, steal the sausages and chase robins along the fence across 30 levels in a house, a garden and a city street.">
+<meta name="theme-color" content="#2a1a3a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Naughty Paws: Cat Mischief">
+<meta property="og:description" content="Be the cat. Cause chaos. Don't get caught! A cosy stealth game by SUMAR_TECH.">
+<meta property="og:url" content="https://sumar7.github.io/naughtypaws/">
+<meta property="og:image" content="https://sumar7.github.io/img/naughtypaws-banner.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sumar7.github.io/naughtypaws/">
+<link rel="icon" href="../img/naughtypaws-icon.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Naughty Paws: Cat Mischief",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Android",
+  "url": "https://play.google.com/store/apps/details?id=com.sumartech.naughtypaws",
+  "image": "https://sumar7.github.io/img/naughtypaws-icon.webp",
+  "publisher": { "@type": "Organization", "name": "SUMAR_TECH", "url": "https://sumar7.github.io/" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf8f3; --bg-2: #f3ede4; --surface: #ffffff; --line: #ebe2d6;
+    --ink: #2a1a12; --ink-2: #6b5446; --accent: #ff7a1e; --btn: #2a1a12; --btn-ink: #ffffff;
+    --chip: #ffe8d1; --chip-ink: #8a3a00;
+    --shadow: 0 1px 0 rgba(42, 26, 18, .04), 0 18px 40px -18px rgba(42, 26, 18, .3);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #160e1c; --bg-2: #1d1326; --surface: #241830; --line: #34253f; --ink: #fff3ea; --ink-2: #cdb8ad;
+      --btn: #fff3ea; --btn-ink: #1d1326; --chip: #3d2414; --chip-ink: #ffc89a;
+      --shadow: 0 1px 0 rgba(255, 255, 255, .03), 0 20px 44px -20px rgba(0, 0, 0, .7); }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 500 16px/1.6 "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  .top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .top a { text-decoration: none; font-weight: 700; color: var(--ink-2); }
+  .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; padding: 24px 0 40px; }
+  .hero img.banner { width: 100%; height: auto; border-radius: 22px; box-shadow: var(--shadow); }
+  .title { display: flex; gap: 14px; align-items: center; }
+  .title img { width: 64px; height: 64px; border-radius: 16px; }
+  h1 { font: 800 clamp(34px, 5vw, 52px)/1.05 "Bricolage Grotesque", sans-serif; margin: 0; letter-spacing: -.02em; }
+  .tag { font: 600 20px/1.3 "Bricolage Grotesque", sans-serif; color: var(--ink-2); margin: 14px 0 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 18px 0 22px; }
+  .chips li { background: var(--chip); color: var(--chip-ink); padding: 5px 12px; border-radius: 99px; font-size: 14px; font-weight: 700; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 14px; font-weight: 700; text-decoration: none; background: var(--btn); color: var(--btn-ink); }
+  .btn svg { width: 22px; height: 22px; }
+  .soon { display: block; font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+  h2 { font: 800 28px/1.15 "Bricolage Grotesque", sans-serif; margin: 0 0 14px; }
+  section { padding: 34px 0; border-top: 1px solid var(--line); }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .shots img { width: 100%; height: auto; border-radius: 18px; box-shadow: var(--shadow); background: var(--bg-2); }
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .feature { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+  .feature b { display: block; font: 700 18px/1.2 "Bricolage Grotesque", sans-serif; margin-bottom: 6px; }
+  .feature p { margin: 0; color: var(--ink-2); }
+  ol.how { padding-left: 20px; } ol.how li { margin: 6px 0; }
+  footer { padding: 30px 0 50px; color: var(--ink-2); font-size: 14px; display: flex; flex-wrap: wrap; gap: 18px; border-top: 1px solid var(--line); }
+  @media (max-width: 800px) {
+    .hero { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+    .features { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top"><a href="../">← SUMAR_TECH Games</a><a href="privacy.html">Privacy</a></nav>
+
+  <header class="hero">
+    <div>
+      <div class="title">
+        <img src="../img/naughtypaws-icon.webp" alt="" width="64" height="64">
+        <h1>Naughty Paws</h1>
+      </div>
+      <p class="tag">Be the cat. Cause chaos. Don't get caught!</p>
+      <p>Emma loves her tidy home. You are her cat, and you have other plans. Sneak past her, knock the cup off the dining table, unroll every toilet roll, steal the fish from the counter and eat it in your bed, all without being seen. Stay out of her yellow vision cone, hide when she hears a crash, and make each level the messiest day of her life.</p>
+      <ul class="chips" aria-label="Plays on, and how">
+        <li>Phone</li><li>Tablet</li><li>Offline</li><li>One-thumb controls</li><li>30 levels</li><li>Kitten School tutorial</li>
+      </ul>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.sumartech.naughtypaws"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.6 1.8a1 1 0 0 0-.6.93v18.54a1 1 0 0 0 .6.92l10.1-10.2L3.6 1.8Zm11.5 8.3 2.9-2.93-11.2-6.3a1 1 0 0 0-.3-.1l8.6 9.33Zm0 3.8-8.6 9.33a1 1 0 0 0 .3-.1l11.2-6.3-2.9-2.93Zm1.4-1.9 3.3-1.86c.8-.45.8-1.63 0-2.08l-3.3-1.87-2.1 2.9 2.1 2.91Z"/></svg><span>Get it on Google Play</span></a>
+      <span class="soon">Coming soon to Google Play.</span>
+    </div>
+    <img class="banner" src="../img/naughtypaws-banner.webp" alt="Naughty Paws: a ginger and white cat peeking over a table edge in a spotlight, next to a coffee mug" width="1024" height="500">
+  </header>
+
+  <section aria-labelledby="shots-h">
+    <h2 id="shots-h">Screenshots</h2>
+    <div class="shots">
+      <img src="shot-swat.webp" alt="The cat on the dining table, about to swat a cup off" width="540" height="960" loading="lazy">
+      <img src="shot-mess.webp" alt="Toilet paper flying all over the bathroom floor" width="540" height="960" loading="lazy">
+      <img src="shot-robin.webp" alt="Chasing a robin along the top of the garden fence" width="540" height="960" loading="lazy">
+      <img src="shot-shop.webp" alt="The Paw Shop: the cat trying on the Phoenix Crown" width="540" height="960" loading="lazy">
+    </div>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How to play</h2>
+    <ol class="how">
+      <li><b>Drag anywhere</b> to walk. Push gently to sneak, push further to run.</li>
+      <li><b>Follow the paw prints</b> to your next naughty task. Simple ones start by themselves; for the big ones, tap the action button to jump up, swat, grab or unroll.</li>
+      <li><b>Stay out of the yellow cone.</b> That is what Emma can see. Crashes are loud: she comes to look, so run and hide until she gives up.</li>
+      <li><b>Finish every task</b> to win. Get caught three times and the level is over; fewer catches mean more stars.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="feat-h">
+    <h2 id="feat-h">What's inside</h2>
+    <div class="features">
+      <div class="feature"><b>30 levels, 3 places</b><p>Home Sweet Home, the Backyard with its pool and grill, and Main Street with cafés, parked cars and a park.</p></div>
+      <div class="feature"><b>Emma has a plan</b><p>She waters the garden, watches TV and sets the table, glances around, hears every crash and searches for you.</p></div>
+      <div class="feature"><b>Walk the walls</b><p>Jump onto fences, garden walls and kitchen counters and chase cheeky robins along the top.</p></div>
+      <div class="feature"><b>The Paw Shop</b><p>20 coats and 60 hats, collars and glasses, from a party hat to the Phoenix Crown and a Cosmic Galaxy coat.</p></div>
+      <div class="feature"><b>Kitten School</b><p>A short guided first level teaches moving, sneaking and the action button before the real mischief starts.</p></div>
+      <div class="feature"><b>Plays offline</b><p>No account needed. Your progress, coins and outfits stay on your device.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="free-h">
+    <h2 id="free-h">Free to play</h2>
+    <p>Naughty Paws is free with occasional ads between levels, and optional videos you can choose to watch to double your coins or unlock shop items. The VIP Pack, a one-time purchase, removes the ads between levels for good, unlocks all 12 premium items and adds 5,000 coins.</p>
+  </section>
+
+  <footer>
+    <span>© 2026 SUMAR_TECH</span>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="mailto:sumartechcorp@gmail.com">sumartechcorp@gmail.com</a>
+    <a href="../">More games</a>
+  </footer>
+</div>
+</body>
+</html>
