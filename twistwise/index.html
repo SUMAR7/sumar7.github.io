@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twistwise: Cube Solver 3D · SUMAR_TECH</title>
+<meta name="description" content="Twistwise solves your 2x2, 3x3, 4x4 or 5x5 cube with you: scan it with the camera, follow every turn in 3D, then learn to solve it yourself. No ad when the app opens.">
+<meta name="theme-color" content="#0d0e11">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Twistwise: Cube Solver 3D">
+<meta property="og:description" content="Scan your cube, follow every turn in 3D, and learn to solve it yourself. A cube solver and tutor by SUMAR_TECH.">
+<meta property="og:url" content="https://www.sumartech.com/twistwise/">
+<meta property="og:image" content="https://www.sumartech.com/img/twistwise-banner.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.sumartech.com/twistwise/">
+<link rel="icon" href="../img/twistwise-icon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f7f9; --bg-2: #eceef2; --surface: #ffffff; --line: #e1e4ea;
+    --ink: #14161b; --ink-2: #565d6b; --accent: #1fa97a; --btn: #14161b; --btn-ink: #ffffff;
+    --chip: #dff5ec; --chip-ink: #0b6b4f;
+    --shadow: 0 1px 0 rgba(20, 22, 27, .04), 0 18px 40px -18px rgba(20, 22, 27, .3);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0d0e11; --bg-2: #16181d; --surface: #1a1d23; --line: #2a2d35; --ink: #f4f5f7; --ink-2: #a3a9b4;
+      --btn: #f4f5f7; --btn-ink: #0d0e11; --chip: #12352a; --chip-ink: #7df0c2;
+      --shadow: 0 1px 0 rgba(255, 255, 255, .03), 0 20px 44px -20px rgba(0, 0, 0, .7); }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 500 16px/1.6 "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  .top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .top a { text-decoration: none; font-weight: 700; color: var(--ink-2); }
+  .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; padding: 24px 0 40px; }
+  .hero img.banner { width: 100%; height: auto; border-radius: 22px; box-shadow: var(--shadow); }
+  .title { display: flex; gap: 14px; align-items: center; }
+  .title img { width: 64px; height: 64px; border-radius: 16px; }
+  h1 { font: 800 clamp(34px, 5vw, 52px)/1.05 "Bricolage Grotesque", sans-serif; margin: 0; letter-spacing: -.02em; }
+  .tag { font: 600 20px/1.3 "Bricolage Grotesque", sans-serif; color: var(--ink-2); margin: 14px 0 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 18px 0 22px; }
+  .chips li { background: var(--chip); color: var(--chip-ink); padding: 5px 12px; border-radius: 99px; font-size: 14px; font-weight: 700; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 14px; font-weight: 700; text-decoration: none; background: var(--btn); color: var(--btn-ink); }
+  .btn svg { width: 22px; height: 22px; }
+  .soon { display: block; font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+  h2 { font: 800 28px/1.15 "Bricolage Grotesque", sans-serif; margin: 0 0 14px; }
+  section { padding: 34px 0; border-top: 1px solid var(--line); }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .shots img { width: 100%; height: auto; border-radius: 18px; box-shadow: var(--shadow); background: var(--bg-2); }
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .feature { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+  .feature b { display: block; font: 700 18px/1.2 "Bricolage Grotesque", sans-serif; margin-bottom: 6px; }
+  .feature p { margin: 0; color: var(--ink-2); }
+  ol.how { padding-left: 20px; } ol.how li { margin: 6px 0; }
+  footer { padding: 30px 0 50px; color: var(--ink-2); font-size: 14px; display: flex; flex-wrap: wrap; gap: 18px; border-top: 1px solid var(--line); }
+  @media (max-width: 800px) {
+    .hero { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+    .features { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top"><a href="../studio/">← SUMAR_TECH Games</a><a href="/sumartech-legal/twistwise/privacy.html">Privacy</a></nav>
+
+  <header class="hero">
+    <div>
+      <div class="title">
+        <img src="../img/twistwise-icon.webp" alt="" width="64" height="64">
+        <h1>Twistwise</h1>
+      </div>
+      <p class="tag">Solve your cube. Then learn how.</p>
+      <p>Stuck with a scrambled cube? Show each side to the camera, or paint the colours in by hand, and Twistwise walks you through the solution one clear turn at a time on a 3D cube. When you want to do it without the app, it teaches you the method layer by layer, with the reason for every step.</p>
+      <ul class="chips" aria-label="Plays on, and how">
+        <li>Phone</li><li>Tablet</li><li>2x2 to 5x5</li><li>Camera scan</li><li>Works offline</li><li>No account</li>
+      </ul>
+      <span class="soon">Coming soon to Google Play.</span>
+    </div>
+    <img class="banner" src="../img/twistwise-banner.webp" alt="Twistwise: a 3x3 cube with its top layer part-way through a turn, beside the words Solve your cube, then learn how" width="1024" height="500">
+  </header>
+
+  <section aria-labelledby="shots-h">
+    <h2 id="shots-h">Screenshots</h2>
+    <div class="shots">
+      <img src="shot-steps.webp" alt="A step of the solution: arrows on the cube show the top layer turning right, with the words Top to the right" width="540" height="1080" loading="lazy">
+      <img src="shot-scan.webp" alt="The screen where you enter your cube, with the colour palette and the message Looks right, ready to solve" width="540" height="1080" loading="lazy">
+      <img src="shot-big.webp" alt="A 5x5 cube part-way through its solution" width="540" height="1080" loading="lazy">
+      <img src="shot-play.webp" alt="Play mode: a scrambled cube with a timer, turn count, undo and hint buttons" width="540" height="1080" loading="lazy">
+    </div>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How it works</h2>
+    <ol class="how">
+      <li><b>Enter your cube.</b> Scan it with the camera, one side at a time, or tap the colours onto the 3D cube. The app checks it as you go and tells you which sticker to look at if something cannot be right.</li>
+      <li><b>Pick a solve.</b> Fastest solve gets it done in about 20 turns for a 3x3. Teach me solves the same cube the way a person does, layer by layer.</li>
+      <li><b>Follow the arrows.</b> Arrows on the cube show which layer turns and which way, with plain words such as "Right side up". Step forward, step back, or let it play at your speed.</li>
+      <li><b>Learn it.</b> Short lessons show each stage on a fresh example until the moves feel familiar.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="feat-h">
+    <h2 id="feat-h">What's inside</h2>
+    <div class="features">
+      <div class="feature"><b>Four cube sizes</b><p>2x2 and 3x3 are free. 4x4 and 5x5 come with Twistwise Pro, solved in the stages people use: centres, edge pairs, parity, then finish like a 3x3.</p></div>
+      <div class="feature"><b>Camera scan</b><p>Hold each side inside the square and capture it. Colours are read on your phone; pictures are never saved or sent anywhere.</p></div>
+      <div class="feature"><b>3D, one turn at a time</b><p>Arrows on the cube, plain words, and half turns shown as two single turns so nothing goes by too fast.</p></div>
+      <div class="feature"><b>Lessons</b><p>The 2x2 course is free in full and the 3x3 course is free up to the first layer. Each lesson uses a new example every time.</p></div>
+      <div class="feature"><b>Play and timer</b><p>Swipe the stickers to solve a scrambled cube on your phone, with undo and hints. The timer gives scrambles, best time and average of 5.</p></div>
+      <div class="feature"><b>Works offline</b><p>No account needed. Your cubes, times and settings stay on your device.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="free-h">
+    <h2 id="free-h">Free, with a fair upgrade</h2>
+    <p>There is no ad when the app opens and none between you and your solution. You get one free solve every day; for another, or for a camera scan after your first, you can choose to watch one short ad. Twistwise Pro is a single payment, not a subscription: it adds the 4x4 and 5x5, the full 3x3 course, unlimited solves and scans, and removes every ad.</p>
+  </section>
+
+  <footer>
+    <span>© 2026 SUMAR_TECH</span>
+    <a href="/sumartech-legal/twistwise/privacy.html">Privacy policy</a>
+    <a href="mailto:sumartechcorp@gmail.com">sumartechcorp@gmail.com</a>
+    <a href="../studio/">More games</a>
+  </footer>
+</div>
+</body>
+</html>
