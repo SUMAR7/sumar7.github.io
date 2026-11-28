@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.sumartech.com/sitemap.xml
+Sitemap: https://www.sumartech.com/citizenwise/sitemap.xml
